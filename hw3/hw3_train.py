@@ -74,7 +74,7 @@ def load_data():
     return pic , mask_label
 '''       
 
-t_data , t_1 = preprocess()
+t_data , t_1 = preprocess(sys.argv[1])
 
 t_label = []
 for i in t_label :
@@ -334,7 +334,7 @@ num_classes = 7
 
 
 
-val  = pre_val()
+val  = pre_val(sys.argv[2])
 
 
 
@@ -347,11 +347,11 @@ def next_batch(x,y,batch_size=32):
     epo = le//batch_size
     for i in range(0,batch_size*epo,32):
         yield x[i:i+32] , y[i:i+32]
-'''
+
 tensorboard_dir = 'tensorboard/'   # 保存目录
 if not os.path.exists(tensorboard_dir):
     os.makedirs(tensorboard_dir)
-'''
+
 
 
 
@@ -376,6 +376,7 @@ process_dir = 'training_process/'   # 保存目录
 if not os.path.exists(process_dir):
     os.makedirs(process_dir)
 
+
 test = np.array([val[9],val[98],val[108]])
 loss_trace = []
 for i in range(50): 
@@ -394,8 +395,9 @@ for i in range(50):
             jk = k.reshape(512,512)
             temp_3 = return_la(jk,label_value)
             temp_3 = temp_3.astype(np.uint8)
-            io.imsave('training_process/'+str(i)+'_'+str(count)+'mask.jpg',temp_3)
+            io.imsave('training_process/'+str(i)+'_'+str(count)+'mask.png',temp_3)
             count+=1
+            
 saver.save(sess,'temp/fc8.ckpt')
        
 bat = []
