@@ -401,8 +401,8 @@ for i in range(50):
 saver.save(sess,'temp/fc8.ckpt')
        
 bat = []
-for i in range(0,len(val),32):
-    bat.append(val[i:i+32])
+for i in range(0,len(val),10):
+    bat.append(val[i:i+10])
 
 
 
