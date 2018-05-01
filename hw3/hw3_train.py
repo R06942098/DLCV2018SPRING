@@ -79,7 +79,7 @@ t_data , t_1 = preprocess(sys.argv[1])
 t_label = []
 for i in t_label :
     cc = map_la(i,label_value)
-    t_label.append(c)
+    t_label.append(cc)
 
 t_label = np.array(t_label)
 
@@ -338,15 +338,15 @@ val  = pre_val(sys.argv[2])
 
 
 
-def next_batch(x,y,batch_size=32):
+def next_batch(x,y,batch_size=10):
     temp = np.arange(len(x))
     np.random.shuffle(temp)
     x = x[temp]
     y = y[temp]
     le = len(x)
     epo = le//batch_size
-    for i in range(0,batch_size*epo,32):
-        yield x[i:i+32] , y[i:i+32]
+    for i in range(0,batch_size*epo,10):
+        yield x[i:i+10] , y[i:i+10]
 
 tensorboard_dir = 'tensorboard/'   # 保存目录
 if not os.path.exists(tensorboard_dir):
@@ -438,7 +438,7 @@ for i in answer :
         temp_3 = temp_3.astype(np.uint8)
         temp = 4-len(str(count))
         fin = '0'*temp + str(count)
-        io.imsave(sys.argv[3]+fin+'_mask.png',temp_3)
+        io.imsave(sys.argv[3]+'/'+fin+'_mask.png',temp_3)
         count+=1
 
 
