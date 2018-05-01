@@ -225,7 +225,7 @@ def pre_val(filepath):
         if i.split('.')[0][-3:] == 'sat':
             num = i.split('_')[0]
             nu.append(num)
-            ls = io.imread(filepath+'/'+i).astype(np.float32)
+            ls = io.imread(os.path.join(filepath,i)).astype(np.float32)
             pic.append(ls)
     #for i in temp : 
     #    if i.split('.')[0][-3:] == 'sat':
@@ -273,7 +273,7 @@ for i in answer :
         temp_3 = temp_3.astype(np.uint8)
         temp = 4-len(str(count))
         fin = '0'*temp + str(count)
-        io.imsave(answer_dir+'/'+nu[count]+'_mask.png',temp_3)
+        io.imsave(os.path.join(answer_dir,nu[count]+'_mask.png'),temp_3)
         count+=1
         
 def read_masks_jpg(filepath):

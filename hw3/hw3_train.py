@@ -31,10 +31,10 @@ def preprocess(filepath):
     gg = []
     qq = []
     for i in pic : 
-        ls = io.imread(filepath+'/'+i).astype(np.float32)
+        ls = io.imread(os.path.join(filepath,i)).astype(np.float32)
         gg.append(ls)
     for i in mask: 
-        ls = io.imread(filepath+'/'+i).astype(np.float32)
+        ls = io.imread(os.path.join(filepath,i)).astype(np.float32)
         qq.append(ls)
     return np.array(gg) , np.array(qq)
 
@@ -395,7 +395,7 @@ for i in range(50):
             jk = k.reshape(512,512)
             temp_3 = return_la(jk,label_value)
             temp_3 = temp_3.astype(np.uint8)
-            io.imsave('training_process/'+str(i)+'_'+str(count)+'mask.png',temp_3)
+            io.imsave(os.path.join('training_process/',str(i)+'_'+str(count)+'mask.png'),temp_3)
             count+=1
             
 saver.save(sess,'temp/fc8.ckpt')
@@ -438,7 +438,7 @@ for i in answer :
         temp_3 = temp_3.astype(np.uint8)
         temp = 4-len(str(count))
         fin = '0'*temp + str(count)
-        io.imsave(sys.argv[3]+'/'+fin+'_mask.png',temp_3)
+        io.imsave(os.path.join(sys.argv[3],fin+'_mask.png'),temp_3)
         count+=1
 
 
