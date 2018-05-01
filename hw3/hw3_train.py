@@ -77,7 +77,7 @@ def load_data():
 t_data , t_1 = preprocess(sys.argv[1])
 
 t_label = []
-for i in t_label :
+for i in t_1 :
     cc = map_la(i,label_value)
     t_label.append(cc)
 
