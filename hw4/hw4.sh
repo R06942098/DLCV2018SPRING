@@ -15,8 +15,8 @@ wget 'https://www.dropbox.com/s/oaqgjzg8hvsik5e/vae.data-00000-of-00001?dl=1' -O
 wget 'https://www.dropbox.com/s/etirqtcf98v6zod/vae.index?dl=1' -O'vae.index'
 wget 'https://www.dropbox.com/s/zupke4t55usa5nw/vae.meta?dl=1' -O'vae.meta'
 wget 'https://www.dropbox.com/s/y2j55wk4uk6j8sn/vae_no.pickle?dl=1' -O'vae_no.pickle'
-python3 hw4_problem1.py hw4_data $2 
-python3 hw4_problem2.py hw4_data $2 
-python3 hw4_problem3.py hw4_data $2 
-python3 hw4_bonus.py hw4_data $2 
+python3 hw4_problem1.py $1 $2 
+python3 hw4_problem2.py $1 $2 
+python3 hw4_problem3.py $1 $2 
+python3 hw4_bonus.py $1 $2 
 
