@@ -60,7 +60,7 @@ def read_video(v_file_path,v_csv_path):
     return validation_list #, validation_label
 
 
-validation_list ,  validation_label = read_video(sys.argv[1],sys.argv[2])
+validation_list  = read_video(sys.argv[1],sys.argv[2])
 
 parameters = [] 
 
@@ -247,7 +247,7 @@ train_op = optimizer.apply_gradients(zip(clipped_gradient,params),global_step=gl
 
 
 
-def next_batch(input_image,label , batch_size=32):
+def next_batch(input_image , batch_size=32):
     le = len(input_image)
     #c = np.arange([i for i in range(le)])
     epo = le//batch_size
@@ -255,10 +255,10 @@ def next_batch(input_image,label , batch_size=32):
     
     for i in range(0,le,32):
         if i == (epo *batch_size) :
-            yield np.array(input_image[i:]+input_image[:(32-temp_5)]) , np.array(label[i:]+label[:(32-temp_5)])
+            yield np.array(input_image[i:]+input_image[:(32-temp_5)])
         else :
             #yield np.array(input_image[i:i+32]) , np.array(label[i:i+32])
-            yield np.array(input_image[i:i+32]) , np.array(label[i:i+32])
+            yield np.array(input_image[i:i+32])
 
 sess= tf.Session()
 saver = tf.train.Saver()
@@ -269,8 +269,8 @@ sess.run(init)
 def validation_test():
     for i in range(1):
         acc_trace=[]
-        for m,n in next_batch(emb_v,validation_label):
-            acc_1= sess.run(acc,feed_dict={embbed:m,lab:n,keep_prob:1.0})
+        for m,n in next_batch(emb_v):
+            acc_1= sess.run(acc,feed_dict={embbed:m,keep_prob:1.0})
             acc_trace.append(acc_1)
     print(np.mean(acc_trace))
     
@@ -282,13 +282,13 @@ fans=[]
 count= 0
 le = len(emb_v)//batch_size
 ty = len(emb_v) - (batch_size *le )
-for m,n in next_batch(emb_v,validation_label):
+for m in next_batch(emb_v):
     if count < le : 
-        fans+=list(np.argmax(sess.run(prob,feed_dict={embbed:m,lab:n,keep_prob:1}),1))
+        fans+=list(np.argmax(sess.run(prob,feed_dict={embbed:m,keep_prob:1}),1))
         count+=1
     else : 
         
-        fans+=list(np.argmax(sess.run(prob,feed_dict={embbed:m,lab:n,keep_prob:1}),1))[0:ty]
+        fans+=list(np.argmax(sess.run(prob,feed_dict={embbed:m,keep_prob:1}),1))[0:ty]
 
 pp = open(os.path.join(sys.argv[3],'p2_result.txt'),'w')
 for i in fans: 

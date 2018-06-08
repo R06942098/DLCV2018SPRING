@@ -208,7 +208,7 @@ acc = tf.reduce_mean(tf.cast(tf.equal(tf.argmax(prob,1),lab),tf.float32))
 optimizer = tf.train.AdamOptimizer(0.0001).minimize(loss)
 
 
-def next_batch(input_image,label , batch_size=64):
+def next_batch(input_image, batch_size=64):
     le = len(input_image)
     #c = np.arange([i for i in range(le)])
     epo = le//batch_size
@@ -218,9 +218,9 @@ def next_batch(input_image,label , batch_size=64):
     #    yield np.array(encoder_input[i:i+16])
     for i in range(0,le,64):
         if i == epo *batch_size :
-            yield np.array(input_image[i:]) , np.array(label[i:])
+            yield np.array(input_image[i:])
         else :
-            yield np.array(input_image[i:i+64]) , np.array(label[i:i+64])
+            yield np.array(input_image[i:i+64])
             
 
 sess= tf.Session()
@@ -233,9 +233,9 @@ saver.restore(sess,'150epochs')
 for i in range(1):
     acc_trace=[]
     pre_trace = []
-    for m,n in next_batch(emb_v,validation_label):
+    for m in next_batch(emb_v):
         #acc_1= sess.run(acc,feed_dict={embbed:m,lab:n})
-        prob_1= sess.run(prob,feed_dict={embbed:m,lab:n})
+        prob_1= sess.run(prob,feed_dict={embbed:m})
         pre_trace += list(np.argmax(prob_1,1))
         #merge = sess.run(merged,feed_dict={embbed:m,lab:n,keep_prob:1.0})
         #acc_trace.append(acc_1)
