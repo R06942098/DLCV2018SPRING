@@ -1,0 +1,56 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jan 18 13:24:21 2018
+@author: cengbowei
+"""
+
+
+#!/bin/bash 
+wget 'https://www.dropbox.com/s/ophhyx6di347ybk/44.data-00000-of-00001?dl=1' -O'44.data-00000-of-00001'
+wget 'https://www.dropbox.com/s/wcw6889ytcxzl0y/44.index?dl=1' -O'44.index'
+wget 'https://www.dropbox.com/s/i98ra3abcpwhbs5/44.meta?dl=1' -O'44.meta'
+wget 'https://www.dropbox.com/s/gmmmt6fbc24u81v/59.data-00000-of-00001?dl=1' -O'59.data-00000-of-00001'
+wget 'https://www.dropbox.com/s/l135245ld9689nb/59.index?dl=1' -O'59.index'
+wget 'https://www.dropbox.com/s/cdzk80me7daznu4/59.meta?dl=1' -O'59.meta'
+wget 'https://www.dropbox.com/s/hp7o9ik1hy09wnl/59_33.data-00000-of-00001?dl=1' -O'59_33.data-00000-of-00001'
+wget 'https://www.dropbox.com/s/h0xm4pbs1gziegq/59_33.index?dl=1' -O'59_33.index'
+wget 'https://www.dropbox.com/s/4p81d39efln1vk7/59_33.meta?dl=1' -O'59_33.meta'
+wget 'https://www.dropbox.com/s/pkjtnjslszhtr0t/59_40.data-00000-of-00001?dl=1' -O'59_40.data-00000-of-00001'
+wget 'https://www.dropbox.com/s/020tyq9ie4368y1/59_40.index?dl=1' -O'59_40.index'
+wget 'https://www.dropbox.com/s/nwtwn0lifema7jv/59_40.meta?dl=1' -O'59_40.meta'
+wget 'https://www.dropbox.com/s/ccarox87g2hi1s2/64_392.data-00000-of-00001?dl=1' -O'64_392.data-00000-of-00001'
+wget 'https://www.dropbox.com/s/iarn5up9bdde3hk/64_392.index?dl=1' -O'64_392.index'
+wget 'https://www.dropbox.com/s/v8ii10f3749qer5/64_392.meta?dl=1' -O'64_392.meta'
+wget 'https://www.dropbox.com/s/qxow7k0pugfftqn/69_38.data-00000-of-00001?dl=1' -O'69_38.data-00000-of-00001'
+wget 'https://www.dropbox.com/s/1pzv8kgmikiq75y/69_38.index?dl=1' -O'69_38.index'
+wget 'https://www.dropbox.com/s/lza9hiekn9cxrtd/69_38.meta?dl=1' -O'69_38.meta'
+wget 'https://www.dropbox.com/s/gduwuurtkkty1az/54_381.data-00000-of-00001?dl=1' -O'54_381.data-00000-of-00001'
+wget 'https://www.dropbox.com/s/x0mkbg5mglwmk07/54_381.index?dl=1' -O'54_381.index'
+wget 'https://www.dropbox.com/s/zi5vvpfqiidyc30/54_381.meta?dl=1' -O'54_381.meta'
+wget 'https://www.dropbox.com/s/oc0i6no6r32yk0c/49_398.data-00000-of-00001?dl=1' -O'49_398.data-00000-of-00001'
+wget 'https://www.dropbox.com/s/zre7t05fxeavxg1/49_398.index?dl=1' -O'49_398.index'
+wget 'https://www.dropbox.com/s/arbxrqu5kiq9att/49_398.meta?dl=1' -O'49_398.meta'
+wget 'https://www.dropbox.com/s/grefq4lz0ng2s8b/49_351.data-00000-of-00001?dl=1' -O'49_351.data-00000-of-00001'
+wget 'https://www.dropbox.com/s/p6xhvpjyschf6yw/49_351.index?dl=1' -O'49_351.index'
+wget 'https://www.dropbox.com/s/grqw0ck2ebszctf/49_351.meta?dl=1' -O'49_351.meta'
+wget 'https://www.dropbox.com/s/g1zvsxn0thtbkno/69_375.data-00000-of-00001?dl=1' -O'69_375.data-00000-of-00001'
+wget 'https://www.dropbox.com/s/llkabisxpdfoa5u/69_375.index?dl=1' -O'69_375.index'
+wget 'https://www.dropbox.com/s/mopmdcdkq3bn0qz/69_375.meta?dl=1' -O'69_375.meta'
+wget 'https://www.dropbox.com/s/p948k8rdab88xwg/59_394.index?dl=1' -O'59_394.index'
+wget 'https://www.dropbox.com/s/2knr3xly0eeage2/59_394.data-00000-of-00001?dl=1' -O'59_394.data-00000-of-00001'
+wget 'https://www.dropbox.com/s/ad8indbag3q1nqe/59_394.meta?dl=1' -O'59_394.meta'
+wget 'https://www.dropbox.com/s/f3crypqpx1n6kdn/54_40.data-00000-of-00001?dl=1' -O'54_40.data-00000-of-00001'
+wget 'https://www.dropbox.com/s/q82jele5kxx7z2e/54_40.index?dl=1' -O'54_40.index'
+wget 'https://www.dropbox.com/s/krjbv35xv3s8tmp/54_40.meta?dl=1' -O'54_40.meta'
+wget 'https://www.dropbox.com/s/bt4tm0v6f9v2mxd/49_425.data-00000-of-00001?dl=1' -O'49_425.data-00000-of-00001'
+wget 'https://www.dropbox.com/s/0arecm1dym7me3m/49_425.index?dl=1' -O'49_425.index'
+wget 'https://www.dropbox.com/s/5s2hnoginxfs2zg/49_425.meta?dl=1' -O'49_425.meta'
+wget 'https://www.dropbox.com/s/eel12hx34tky00p/59_432.data-00000-of-00001?dl=1' -O'59_432.data-00000-of-00001'
+wget 'https://www.dropbox.com/s/6r4of5mve1tuf51/59_432.index?dl=1' -O'59_432.index'
+wget 'https://www.dropbox.com/s/tdprn7j9t85j9np/59_432.meta?dl=1' -O'59_432.meta'
+wget 'https://www.dropbox.com/s/2kq92iyzhjn3h45/59_unknown.data-00000-of-00001?dl=1' -O'59_unknown.data-00000-of-00001'
+wget 'https://www.dropbox.com/s/icgyr0z3xl40vus/59_unknown.index?dl=1' -O'59_unknown.index'
+wget 'https://www.dropbox.com/s/h2hdu2qbskc7c6r/59_unknown.meta?dl=1' -O'59_unknown.meta'
+wget 'https://www.dropbox.com/s/8rv15sfj3c2nn2n/sample_5_shot.npy?dl=1' -O'sample_5_shot.npy'
+python3 main_5shot.py --novel_path $1 --test_path $2 --outfile $3 --ensemble True
